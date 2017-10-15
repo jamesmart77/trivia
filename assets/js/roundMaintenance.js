@@ -1,0 +1,7 @@
+function showQuestion(){
+
+}
+
+function nextRound(){
+    
+}
