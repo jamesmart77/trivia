@@ -2,7 +2,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    font-family: 'Arial', serif;
 }
 
 
@@ -13,11 +13,11 @@ h4 {
     height: 75px;
 }
 
-.personal-header a{
+.personal-header a {
     color: #fff;
 }
 
-.personal-header a:hover{
+.personal-header a:hover {
     text-decoration: none;
     color: #777777;
 }
@@ -51,9 +51,50 @@ body {
     margin: 0 auto;
 }
 
-.jumbotron{
+.jumbotron {
     display: block;
     margin: 25px auto;
+}
+
+.start-btn {
+    width: 33.3%;
+    font-weight: bold;
+}
+
+
+/* trivia question section */
+
+.trivia-container {
+    color: #f5deb3;
+    text-align: center;
+    font-size: 14px;
+}
+
+.round {
+    font-size: 30px;
+}
+
+.question {
+    font-size: 24px;
+}
+
+.time-remaining {
+    font-size: 18px;
+}
+
+.option-btn {
+    display: block;
+    margin: 13px auto;
+    width: 33.3%;
+}
+
+.option-btn:hover {
+    background-color: #4aaaa5;
+    background-image: none;
+}
+
+.answerImg{
+    width: 33.3%;
 }
 
 
@@ -70,11 +111,11 @@ body {
     text-align: center;
 }
 
-.footer a{
+.footer a {
     color: #ffffff;
 }
 
-.footer a:hover{
+.footer a:hover {
     text-decoration: none;
     color: #4aaaa5;
 }
