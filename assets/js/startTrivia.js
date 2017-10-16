@@ -10,6 +10,6 @@ function beginTrivia() {
     // }
 
     //reset rounds to 0
-    trivia.currentRound = 0;
+    trivia.currentRound = 2;
     showQuestion();
 }
