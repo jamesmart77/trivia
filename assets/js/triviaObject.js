@@ -18,7 +18,8 @@ var trivia = {
                 } //question 3 choices
             ],
             answers: ["Cap'n Swing", "Appetite for Destruction", "Escape"],
-            answerImages: ["capNSwing.jpg", "gnrAppetite4Destruction.jpg", "Escape.jpg"]
+            answerImages: ["capNSwing.jpg", "gnrAppetite4Destruction.jpg", "Escape.jpg"],
+            answerAudio:["justWhatINeeded.mp3","welcomeToTheJungle.mp3","dontStopBelievin.mp3"]
 
         },
         //round 2

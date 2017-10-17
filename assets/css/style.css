@@ -74,14 +74,16 @@ body {
 
 .round {
     font-size: 30px;
+    margin: 20px auto;
 }
 
 .question {
     font-size: 24px;
+    margin: 10px auto;
 }
 
 .time-remaining {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .option-btn {
@@ -95,8 +97,15 @@ body {
     background-image: none;
 }
 
+.answer-response {
+    font-size: 18px;
+    margin: 10px auto;
+}
 .answerImg{
     width: 33.3%;
+    border-radius: 10px;
+    border: 2px solid #777777;
+    margin: 15px auto;
 }
 
 

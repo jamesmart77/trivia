@@ -1,4 +1,5 @@
 var intervalID;
+var audio = document.createElement("audio");
 
 //function to display question
 function showQuestion() {
@@ -31,7 +32,7 @@ function stopWatch() {
     } else {
         $(".time-remaining").html("Time is Up!");
         clearInterval(intervalID);
-        trivia.incorrectAnswers ++;//increment incorrect answers
+        trivia.incorrectAnswers++; //increment incorrect answers
         let answer = trivia.rounds[trivia.currentRound].answers[trivia.currentQuestion]; //get question answer from current round
         showResponse("Nothing", answer);
     }
@@ -59,9 +60,9 @@ $(".question-options").on("click", ".option-btn", function () {
 function showResponse(result, answer) {
 
     if (result === "correctly") {
-        $(".answer-response").html("You answered <b>" + result + "</b>!")
+        $(".answer-response").html("You answered <b style= color:#4CB74C>" + result + "</b>!")
     } else {
-        $(".answer-response").html("You answered <b>" + result + "</b>! The correct answer was " + answer);
+        $(".answer-response").html("You answered <b style= color:#B20000>" + result + "</b>! The correct answer was " + answer + ".");
     }
 
     //clear option buttons
@@ -69,7 +70,12 @@ function showResponse(result, answer) {
 
     let answerImage = $("<img>");
     answerImage.addClass("answerImg");
-    //add audio clip
+
+    if (trivia.currentRound === 0) {
+        let audioAddress = "assets/audio/" + trivia.rounds[trivia.currentRound].answerAudio[trivia.currentQuestion];
+        audio.setAttribute("src", audioAddress);
+        audio.play();
+    }
 
     //add correct answer image --> currentQuestion will map to the corresponding image in answerImages array
     let imageAddress = "assets/images/" + trivia.rounds[trivia.currentRound].answerImages[trivia.currentQuestion];
@@ -83,7 +89,7 @@ function showResponse(result, answer) {
 
 function waitingForNextRound() {
     //set time for 10 seconds -- this is time until next question
-    trivia.timeRemaining = 10;
+    trivia.timeRemaining = 5;
 
     intervalID = setInterval(timeToNextQuestion, 1000);
 }
@@ -103,22 +109,23 @@ function timeToNextQuestion() {
 
 function nextQuestion() {
 
-    if(trivia.currentQuestion === 2){//if last question of round
-        if(trivia.currentRound === 2){//if in last round
+    if (trivia.currentQuestion === 2) { //if last question of round
+        if (trivia.currentRound === 2) { //if in last round
             showScores();
-        } else{
-        trivia.currentRound ++;//else, next round
-        trivia.currentQuestion = 0;//first question of new round
+            return;
+        } else {
+            trivia.currentRound++; //else, next round
+            trivia.currentQuestion = 0; //first question of new round
         }
     } else {
-        trivia.currentQuestion ++;//same round, next question
+        trivia.currentQuestion++; //same round, next question
     }
 
     reset();
     showQuestion();
 }
 
-function reset(){
+function reset() {
     $(".response-image").empty();
     $(".answer-response").empty();
     trivia.timeRemaining = 30;

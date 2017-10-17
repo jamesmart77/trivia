@@ -1,3 +1,6 @@
+var audioCantStop = document.createElement("audio");
+audioCantStop.setAttribute("src", "assets/audio/CantStopThatFeeling.mp3");
+
 function showScores(){
     //clear everything from elements
     $(".round").empty();
@@ -18,3 +21,4 @@ function showScores(){
     $(".question").append(wrongElement);
 
 }
+
