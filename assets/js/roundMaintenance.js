@@ -3,8 +3,8 @@ var audio = document.createElement("audio");
 
 //function to display question
 function showQuestion() {
-
-    $(".round").html("Round " + (trivia.currentRound + 1)); //+1 because of 0 index array
+   
+    $(".round").html("Round " + (trivia.currentRound + 1) + ": " + trivia.roundTopics[trivia.currentRound]); //+1 because of 0 index array
     $(".question").html(trivia.rounds[trivia.currentRound].questions[trivia.currentQuestion]);
     $(".time-remaining").html("Time Remaining: ");
 

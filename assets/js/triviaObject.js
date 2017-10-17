@@ -65,6 +65,7 @@ var trivia = {
     ],
     //set initial values
     currentRound: 0,
+    roundTopics: ["Music", "Movies", "Politics"],
     currentQuestion: 0,
     correctAnswers: 0,
     incorrectAnswers: 0,
